@@ -11,6 +11,28 @@
 
 #include "binary.h"
 
+
+#if defined( __AVR_ATtiny2313__ ) || defined( __AVR_ATtiny4313__ )
+  #define __AVR_ATtinyX313__
+#endif
+
+#if defined( __AVR_ATtiny24__ ) || defined( __AVR_ATtiny44__ ) || defined( __AVR_ATtiny84__ )
+  #define __AVR_ATtinyX4__
+#endif
+
+#if defined( __AVR_ATtiny25__ ) || defined( __AVR_ATtiny45__ ) || defined( __AVR_ATtiny85__ )
+  #define __AVR_ATtinyX5__
+#endif
+
+#if defined( __AVR_ATtiny87__ ) || defined( __AVR_ATtiny167__ ) 
+  #define __AVR_ATtinyX7__
+#endif
+
+#if defined( __AVR_ATtiny861__ ) 
+  #define __AVR_ATtinyX61__
+#endif
+
+
 #ifdef __cplusplus
 extern "C"{
 #endif
@@ -43,7 +65,7 @@ extern "C"{
 
 // undefine stdlib's abs if encountered
 #ifdef abs
-#undef abs
+  #undef abs
 #endif
 
 #define min(a,b) ((a)<(b)?(a):(b))
@@ -59,16 +81,16 @@ extern "C"{
 #define noInterrupts() cli()
 
 #if F_CPU < 1000000L
-//Prevent a divide by 0 is 
-#warning Clocks per microsecond < 1. To prevent divide by 0, it is rounded up to 1.
-static inline unsigned long clockCyclesPerMicrosecond() __attribute__ ((always_inline));
-static inline unsigned long clockCyclesPerMicrosecond()
-{
-//Inline function will be optimised out.
-  return 1;
-}
+  //Prevent a divide by 0 is 
+  #warning Clocks per microsecond < 1. To prevent divide by 0, it is rounded up to 1.
+  static inline unsigned long clockCyclesPerMicrosecond() __attribute__ ((always_inline));
+  static inline unsigned long clockCyclesPerMicrosecond()
+  {
+  //Inline function will be optimised out.
+    return 1;
+  }
 #else
-#define clockCyclesPerMicrosecond() ( F_CPU / 1000000L )
+  #define clockCyclesPerMicrosecond() ( F_CPU / 1000000L )
 #endif
 
 #define clockCyclesToMicroseconds(a) ( ((a) * 1000L) / (F_CPU / 1000L) )
