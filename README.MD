@@ -8,34 +8,35 @@ It also features an up to date Print class from the standard Arduino core, plus 
 
 ###### Currently the following processors are supported:
 
-*ATtiny84,44,24
-*ATtiny85,45,25
-*ATtiny861
-*ATtiny87/167
-*ATtiny2313
-*Attiny88 (Now Supported. Report problems in Issue #22)
+* ATtiny84,44,24
+* ATtiny85,45,25
+* ATtiny861
+* ATtiny87/167
+* ATtiny2313
+* Attiny88 (Now Supported. Report problems in Issue #22)
 
 You can identify the core using the following:
-`#define ATTINY_CORE`       - Attiny Core
-`#define ATTINY_CORE_NM`    - No-Millis Attiny Core
+```
+#define ATTINY_CORE       - Attiny Core
+#define ATTINY_CORE_NM    - No-Millis Attiny Core
 
 These are used to identify features:
-`#define USE_SOFTWARE_SERIAL`    (0 = hardware serial, 1 = software serial
-`#define USE_SOFTWARE_SPI`       (not defined if hardware spi present)
-`#define HAVE_ADC`               (1 = has ADC functions)
+#define USE_SOFTWARE_SERIAL    (0 = hardware serial, 1 = software serial
+#define USE_SOFTWARE_SPI       (not defined if hardware spi present)
+#define HAVE_ADC               (1 = has ADC functions)
 
 The following identify board variants:
-`#define ATTINYX4`
-`#define ATTINYX5`
-`#define ATTINYX61`
-`#define ATTINYX7`
-`#define ATTINYX313`
+#define ATTINYX4
+#define ATTINYX5
+#define ATTINYX61
+#define ATTINYX7
+#define ATTINYX313
+```
 
 
-
-This core is still in Beta as I haven't fully tested it out yet. I know that the main functions work such as Serial (software), SPI (software), Digital/Analog read/write, millis(), micros(), delay(), delayMicroseconds(), print(), println(). However on some processors, functions such as Tone() are still not fully functional.
-There is also a certain amount of optimisation required to make the compile size smaller for the those chips with severly limited Flash (such as the tiny24).
+>This core is still in Beta as I haven't fully tested it out yet. I know that the main functions work such as Serial (software), SPI (software), Digital/Analog read/write, millis(), micros(), delay(), delayMicroseconds(), print(), println(). However on some processors, functions such as Tone() are still not fully functional.
+>There is also a certain amount of optimisation required to make the compile size smaller for the those chips with severly limited Flash (such as the tiny24).
 
 Also included for the Tiny84 and Tiny85 is a functioning Optiboot bootloader. There are two versions of this:
-> The first is one which is the normal optiboot which can be compiled using the "make attiny84.bat" and "make attiny85.bat" files. This can be hit and miss whether it works due to the fact that the internal oscillator of the ATtiny's is not well calibrated.
-> The second is optiboot but it comes with the TinyTuner sketch built in. The bootloader takes up no additional space as the tuning sketch is overwritten by any uploaded program, however it allows the oscillator to be fully calibrated before sketches are downloaded. This is the version supplied (can be recompiled with "make attiny84_tuned.bat" and "make attiny85_tuned.bat" files). See the readme in the tiny\bootloades\optiboot\ folder for more info.
+* The first is one which is the normal optiboot which can be compiled using the "make attiny84.bat" and "make attiny85.bat" files. This can be hit and miss whether it works due to the fact that the internal oscillator of the ATtiny's is not well calibrated.
+* The second is optiboot but it comes with the TinyTuner sketch built in. The bootloader takes up no additional space as the tuning sketch is overwritten by any uploaded program, however it allows the oscillator to be fully calibrated before sketches are downloaded. This is the version supplied (can be recompiled with "make attiny84_tuned.bat" and "make attiny85_tuned.bat" files). See the readme in the tiny\bootloades\optiboot\ folder for more info.
