@@ -1,39 +1,35 @@
-BETA Arduino 1.0+ core for ATTiny's
-
-Note: Beta testers are needed to try out the core and find any bugs!
-
-The core along with the PCREL patch files can be downloaded in ZIP format here:
-https://github.com/TCWORLD/ATTinyCore/tree/master/Downloads
+###### Arduino 1.6.4+ core for ATTiny's
+To install just add this URL to your board manager: https://dl.dropboxusercontent.com/u/2807353/femtoCore/package_femtocow_attiny_index.json
 
 Based on the arduino-tiny core here: http://code.google.com/p/arduino-tiny/
 
 The core is largely rewritten from the original to bring it inline with the latest version of the IDE and to make the addition of new processors easier by moving all configuration to additional pins_arduino.h files in keeping with the main arduino core.
 It also features an up to date Print class from the standard Arduino core, plus a fixed String class courtesy of the Teensy core.
 
-Currently the following processors are supported:
+###### Currently the following processors are supported:
 
-ATtiny84,44,24
-ATtiny85,45,25
-ATtiny861
-ATtiny87/167
-ATtiny2313
-Attiny88 (Now Supported. Report problems in Issue #22)
+*ATtiny84,44,24
+*ATtiny85,45,25
+*ATtiny861
+*ATtiny87/167
+*ATtiny2313
+*Attiny88 (Now Supported. Report problems in Issue #22)
 
 You can identify the core using the following:
-#define ATTINY_CORE       - Attiny Core
-#define ATTINY_CORE_NM    - No-Millis Attiny Core
+`#define ATTINY_CORE`       - Attiny Core
+`#define ATTINY_CORE_NM`    - No-Millis Attiny Core
 
 These are used to identify features:
-#define USE_SOFTWARE_SERIAL    (0 = hardware serial, 1 = software serial
-#define USE_SOFTWARE_SPI       (not defined if hardware spi present)
-#define HAVE_ADC               (1 = has ADC functions)
+`#define USE_SOFTWARE_SERIAL`    (0 = hardware serial, 1 = software serial
+`#define USE_SOFTWARE_SPI`       (not defined if hardware spi present)
+`#define HAVE_ADC`               (1 = has ADC functions)
 
 The following identify board variants:
-#define ATTINYX4
-#define ATTINYX5
-#define ATTINYX61
-#define ATTINYX7
-#define ATTINYX313
+`#define ATTINYX4`
+`#define ATTINYX5`
+`#define ATTINYX61`
+`#define ATTINYX7`
+`#define ATTINYX313`
 
 
 
