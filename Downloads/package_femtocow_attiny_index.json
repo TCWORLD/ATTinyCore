@@ -4,7 +4,7 @@
          "name":"FemtoCow-attiny",
          "maintainer":"FemtoCow",
          "websiteURL":"https://github.com/FemtoCow",
-         "email":"dontbother@femtocow.com",
+         "email":"tinycore@femtocow.com",
          "help":{
             "online":"https://github.com/FemtoCow"
          },
@@ -12,9 +12,9 @@
             {
                "name":"FemtoCow ATTiny",
                "architecture":"avr",
-               "version":"1.0.0",
-               "category":"MooCow",
-               "url":"https://dl.dropboxusercontent.com/u/2807353/femtoCore/tiny2.zip",
+               "version":"1.1.0",
+               "category":"Contributed",
+               "url":"https://github.com/FemtoCow/ATTinyCore/raw/master/Downloads/tiny2.zip",
                "archiveFileName":"tiny2.zip",
                "checksum":"SHA-256:1411faa314e039054ef518e4299251653cb5f720165fe9c5798c5399a685e19a",
                "size":"279287",
@@ -23,22 +23,22 @@
                },
                "boards":[
                   {
-                     "name":"ATTiny84"
+                     "name":"ATtiny84"
                   },
                   {
-                     "name":"ATTiny85"
+                     "name":"ATtiny85"
                   },
                   {
-                     "name":"ATTiny2313"
+                     "name":"ATtiny2313"
                   },
                   {
-                     "name":"ATTiny861"
+                     "name":"ATtiny861"
                   },
                   {
-                     "name":"ATTiny167"
+                     "name":"ATtiny167"
                   },
                   {
-                     "name":"ATTiny88"
+                     "name":"ATtiny88"
                   }
                ],
                "toolsDependencies":[
