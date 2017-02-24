@@ -1,5 +1,5 @@
 ###### Arduino 1.6.4+ core for ATTiny's
-To install just add this URL to your board manager: https://github.com/FemtoCow/ATTinyCore/raw/master/Download/package_femtocow_attiny_index.json
+To install just add this URL to your board manager: https://github.com/FemtoCow/ATTinyCore/raw/master/Downloads/package_femtocow_attiny_index.json
 
 Based on the arduino-tiny core here: http://code.google.com/p/arduino-tiny/
 
